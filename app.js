@@ -1,18 +1,43 @@
-// BUDGET CONTROLLER
+
+/// BUDGET CONTROLLER
 var budgetController = (function () {
+    var x = 23;
 
-    var Expense = function (id, description, value) {
-        this.id = id;
-        this.description = description;
-        this.value = value;
-        this.percentage = -1;
+    var add = function (a) {
+        return x + a;
     }
-})
 
-Expense.prototype.calcPercentage = function (totalIncome) {
-    if (totalIncome > 0) {
-        this.percentage = Math.round((this.value / totalIncome) * 100);
-    } else {
-        this.percentage = -1;
+    return {
+        publicTest: function (b) {
+            return add(b);
+        }
     }
-};
+
+})();
+
+/// UI CONTORLLER
+var UIController = (function () {
+
+    // code here
+
+})();
+
+// GLOBAL APP CONTROLLER
+var controller = (function (budgetCtrl, UICtrl) {
+
+
+    document.querySelector('.add__btn').addEventListener('click', function () {
+        // 1. get input data
+        // 2. add item to budget contorller
+        // 3. add the item to the UI
+        // 4. calc budget
+        // 5. display budget
+
+    })
+
+
+    document.addEventListener('keypress', function (event) {
+        console.log(event);
+    });
+
+})(budgetController, UIController);
