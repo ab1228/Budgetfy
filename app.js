@@ -26,18 +26,26 @@ var UIController = (function () {
 var controller = (function (budgetCtrl, UICtrl) {
 
 
-    document.querySelector('.add__btn').addEventListener('click', function () {
+    var ctrlAddItem = function () {
         // 1. get input data
         // 2. add item to budget contorller
         // 3. add the item to the UI
         // 4. calc budget
         // 5. display budget
+        console.log('it works');
+    }
 
-    })
+
+    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+
 
 
     document.addEventListener('keypress', function (event) {
-        console.log(event);
+        // console.log(event);
+        if (event.keyCode === 13 || event.which === 13) {
+            ctrlAddItem();
+
+        }
     });
 
 })(budgetController, UIController);
