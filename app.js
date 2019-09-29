@@ -44,7 +44,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         // 3. add the item to the UI
         // 4. calc budget
         // 5. display budget
-        console.log('it works');
+
     }
 
 
@@ -61,3 +61,15 @@ var controller = (function (budgetCtrl, UICtrl) {
     });
 
 })(budgetController, UIController);
+var data = {
+    allItems: {
+        exp: [],
+        inc: []
+    },
+    totals: {
+        exp: 0,
+        inc: 0
+    },
+    budget: 0,
+    percentage: -1
+};
