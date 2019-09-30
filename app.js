@@ -21,7 +21,8 @@ var UIController = (function () {
     var DOMstrings = {
         inputType: '.add__type',
         inputDescription: '.add__description',
-        inputValue: '.add__value'
+        inputValue: '.add__value',
+        inputBtn: '.add__btn'
     }
 
     return {
@@ -46,6 +47,7 @@ var UIController = (function () {
 // GLOBAL APP CONTROLLER
 var controller = (function (budgetCtrl, UICtrl) {
 
+    var DOM = UICtrl.getDOMstrings();
 
     var ctrlAddItem = function () {
         // 1. get input data
@@ -59,7 +61,7 @@ var controller = (function (budgetCtrl, UICtrl) {
     }
 
 
-    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
 
 
 
