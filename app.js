@@ -1,19 +1,36 @@
 
 /// BUDGET CONTROLLER
 var budgetController = (function () {
-    var x = 23;
 
-    var add = function (a) {
-        return x + a;
+    var Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
     }
 
-    return {
-        publicTest: function (b) {
-            return add(b);
+    var Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    }
+
+    var allExpenses = [];
+    var allIncome = [];
+
+    var data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
         }
+
     }
 
 })();
+
 
 /// UI CONTORLLER
 var UIController = (function () {
@@ -67,25 +84,21 @@ var controller = (function (budgetCtrl, UICtrl) {
     var ctrlAddItem = function () {
         // 1. get input data
         var input = UIController.getInput();
-        console.log(input);
+
         // 2. add item to budget contorller
         // 3. add the item to the UI
         // 4. calc budget
         // 5. display budget
 
     };
+    return {
+        init: function () {
+            console.log('test app has started');
+            setupEventListener();
+        }
+    };
 
 
 })(budgetController, UIController);
-var data = {
-    allItems: {
-        exp: [],
-        inc: []
-    },
-    totals: {
-        exp: 0,
-        inc: 0
-    },
-    budget: 0,
-    percentage: -1
-};
+
+controller.init();
