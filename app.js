@@ -47,7 +47,22 @@ var UIController = (function () {
 // GLOBAL APP CONTROLLER
 var controller = (function (budgetCtrl, UICtrl) {
 
-    var DOM = UICtrl.getDOMstrings();
+    var setupEventListener = function () {
+
+        var DOM = UICtrl.getDOMstrings();
+
+        document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
+
+        document.addEventListener('keypress', function (event) {
+            // console.log(event);
+            if (event.keyCode === 13 || event.which === 13) {
+                ctrlAddItem();
+
+            }
+        });
+    }
+
+
 
     var ctrlAddItem = function () {
         // 1. get input data
@@ -58,20 +73,8 @@ var controller = (function (budgetCtrl, UICtrl) {
         // 4. calc budget
         // 5. display budget
 
-    }
+    };
 
-
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-
-
-
-    document.addEventListener('keypress', function (event) {
-        // console.log(event);
-        if (event.keyCode === 13 || event.which === 13) {
-            ctrlAddItem();
-
-        }
-    });
 
 })(budgetController, UIController);
 var data = {
