@@ -114,7 +114,7 @@ var UIController = (function () {
         },
 
         clearFields: function () {
-            document.querySelectorAll(DOMstrings.inputDescription)
+            document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputValue)
         },
 
         getDOMstrings: function () {
