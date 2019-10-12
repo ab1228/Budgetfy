@@ -168,6 +168,10 @@ var controller = (function (budgetCtrl, UICtrl) {
         // 1. get input data
         input = UIController.getInput();
 
+        if (input.description !== '') {
+
+        }
+
         // 2. add item to budget contorller
 
         newItem = budgetCtrl.addItem(input.type, input.description, input.value);
