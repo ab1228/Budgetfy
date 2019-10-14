@@ -55,6 +55,19 @@ var budgetController = (function () {
 
 
         },
+
+        calculateBudget: function () {
+
+            /// calculate total income and expenses
+
+            /// calculate budget: income - expneses
+
+            /// calculate the percentage of income that we spend
+
+
+        },
+
+
         testing: function () {
             console.log(data);
         }
