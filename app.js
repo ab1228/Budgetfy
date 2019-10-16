@@ -6,16 +6,23 @@ var budgetController = (function () {
         this.id = id;
         this.description = description;
         this.value = value;
-    }
+    };
 
     var Income = function (id, description, value) {
         this.id = id;
         this.description = description;
         this.value = value;
-    }
+    };
+    var calculateTotal = function (type) {
+        var sum = 0;
+        data.allItems[type].forEach(function (cur) {
+            sum = sum + cur.value;
+            /* sum += cur.value is the same thing on line 19 just shorter
+            */
+        });
+        data.totals[type] = sum;
+    };
 
-    var allExpenses = [];
-    var allIncome = [];
 
     var data = {
         allItems: {
@@ -59,6 +66,8 @@ var budgetController = (function () {
         calculateBudget: function () {
 
             /// calculate total income and expenses
+            calculateTotal('exp');
+            calculateTotal('inc');
 
             /// calculate budget: income - expneses
 
