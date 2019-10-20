@@ -245,6 +245,7 @@ var controller = (function (budgetCtrl, UICtrl) {
     return {
         init: function () {
             console.log('test app has started');
+            UIController.displayBudget(budget);
             setupEventListener();
         }
     };
