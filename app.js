@@ -183,11 +183,25 @@ var UIController = (function () {
 
         getDOMstrings: function () {
             return DOMstrings;
+        },
+        displayMonth: function () {
+            var now, months, month, year;
+
+            now = new Date();
+            //var christmas = new Date(2016, 11, 25);
+
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            month = now.getMonth();
+
+            year = now.getFullYear();
+            document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' + year;
         }
 
     };
 
 })();
+
+
 
 // GLOBAL APP CONTROLLER
 var controller = (function (budgetCtrl, UICtrl) {
@@ -254,6 +268,7 @@ var controller = (function (budgetCtrl, UICtrl) {
             setupEventListener();
         }
     };
+
 
 
 })(budgetController, UIController);
